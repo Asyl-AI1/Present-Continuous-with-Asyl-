@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Continuous with Asyl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Playful Peach -->
+    <!-- Application Structure Plan: The worksheet is structured into three main, navigable sections: 'Learn', 'Practice', and 'Create'. This task-oriented design follows a natural educational flow, allowing the user to first understand the concepts, then apply them in structured exercises, and finally use them creatively. This is more engaging and less overwhelming than a single, long scrolling page. Navigation is handled by a clear tab-like interface, and practice tasks provide instant, interactive feedback to reinforce learning. -->
+    <!-- Visualization & Content Choices: Report Info: Grammar Rules -> Goal: Inform/Organize -> Viz: Interactive cards with toggleable sections -> Interaction: Click to reveal examples -> Justification: Breaks down information into digestible chunks, encouraging active exploration over passive reading. | Report Info: Practice exercises -> Goal: Test/Reinforce -> Viz: Interactive HTML form elements -> Interaction: User input with a 'Check Answers' button providing instant visual feedback (color-coding) -> Justification: Immediate feedback is crucial for effective learning. | Report Info: Creative writing -> Goal: Apply/Engage -> Viz: A styled component mimicking an Instagram story -> Interaction: User types into a textarea -> Justification: Relatable and fun context enhances engagement for the target user. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF7F0;
+            color: #4A4A4A;
+        }
+        .nav-btn {
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        .nav-btn.active {
+            border-bottom-color: #FF6B6B;
+            color: #FF6B6B;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #F0F0F0;
+        }
+        .correct-answer {
+            border-color: #4CAF50 !important;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+        }
+        .incorrect-answer {
+            border-color: #F44336 !important;
+            box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.3);
+        }
+        .choice-btn {
+            cursor: pointer;
+            border: 2px solid #E0E0E0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .choice-btn:hover {
+            background-color: #FFF7F0;
+            border-color: #FF6B6B;
+        }
+        .choice-btn.selected {
+            background-color: #FF6B6B;
+            color: white;
+            border-color: #FF6B6B;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Present Continuous with Asyl🤍</h1>
+            <p class="mt-4 text-lg text-gray-600">
+                Hey Asyl! You're a brilliant student, super sporty 🏐, and have amazing dreams ✈️! Let's conquer this grammar tense together! ✨
+            </p>
+        </header>
+
+        <nav class="flex justify-center border-b-2 border-gray-200 mb-8">
+            <button id="nav-learn" class="nav-btn active text-lg font-semibold py-4 px-6 text-gray-500">🚀 Learn</button>
+            <button id="nav-practice" class="nav-btn text-lg font-semibold py-4 px-6 text-gray-500">✏️ Practice</button>
+            <button id="nav-create" class="nav-btn text-lg font-semibold py-4 px-6 text-gray-500">💬 Create</button>
+        </nav>
+
+        <main>
+            <section id="section-learn">
+                <div class="space-y-6">
+                    <div class="text-center card">
+                         <h2 class="text-2xl font-bold text-gray-800 mb-2">What is the Present Continuous?</h2>
+                         <p>The Present Continuous is for actions *in progress* right now. Think of it as a live video stream of your life! It's made with two simple parts: the verb **'to be'** ($am, is, are$) + the main verb with **-ing**.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="card">
+                             <h3 class="text-xl font-bold text-gray-800 mb-4">When Do We Use It? 💡</h3>
+                             <p class="mb-4">This section explains the different situations where you can use the Present Continuous. Click on each use to see a personalized example that connects to your life and interests!</p>
+                             <div class="space-y-2">
+                                 <details class="group border rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                     <summary class="font-semibold">Action Happening Now</summary>
+                                     <p class="mt-2 text-gray-600">For something happening at this exact moment. <br><strong class="text-pink-500">Example: I am playing volleyball now. 🏐</strong></p>
+                                 </details>
+                                 <details class="group border rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                     <summary class="font-semibold">Temporary Action</summary>
+                                     <p class="mt-2 text-gray-600">Happening around now, but won't last forever. <br><strong class="text-blue-500">Example: She is listening to Adele at the moment. 🎶</strong></p>
+                                 </details>
+                                 <details class="group border rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                     <summary class="font-semibold">Future Plan</summary>
+                                     <p class="mt-2 text-gray-600">Something already decided for the near future. <br><strong class="text-purple-500">Example: We are watching a drama today. 🎥</strong></p>
+                                 </details>
+                                 <details class="group border rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+                                     <summary class="font-semibold">Dreams & Wishes</summary>
+                                     <p class="mt-2 text-gray-600">Something you are focusing on right now. <br><strong class="text-green-500">Example: I am dreaming about Italy right now. 🇮🇹</strong></p>
+                                 </details>
+                             </div>
+                        </div>
+                        <div class="card">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Signal Words 🚨</h3>
+                            <p class="mb-4">These words often signal that you should use the Present Continuous tense. Look for them in sentences!</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-yellow-100 text-yellow-800 font-medium px-3 py-1 rounded-full">now</span>
+                                <span class="bg-yellow-100 text-yellow-800 font-medium px-3 py-1 rounded-full">right now</span>
+                                <span class="bg-yellow-100 text-yellow-800 font-medium px-3 py-1 rounded-full">at the moment</span>
+                                <span class="bg-yellow-100 text-yellow-800 font-medium px-3 py-1 rounded-full">today</span>
+                                <span class="bg-yellow-100 text-yellow-800 font-medium px-3 py-1 rounded-full">tonight</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="card overflow-x-auto">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Grammar Table</h3>
+                        <p class="text-center mb-4">Here is a quick summary of how to form positive statements, negative statements, and questions. This table helps you see the structure clearly.</p>
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-3 font-semibold">Type</th>
+                                    <th class="p-3 font-semibold">Structure</th>
+                                    <th class="p-3 font-semibold">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold text-green-600">Positive</td>
+                                    <td class="p-3">Subject + am/is/are + V-ing</td>
+                                    <td class="p-3">I am studying English today.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-3 font-semibold text-red-600">Negative</td>
+                                    <td class="p-3">Subject + am/is/are + not + V-ing</td>
+                                    <td class="p-3">I am not playing games right now.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-blue-600">Question</td>
+                                    <td class="p-3">Am/Is/Are + Subject + V-ing?</td>
+                                    <td class="p-3">Are you feeling excited about Italy? ✈️</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-practice" class="hidden">
+                 <div class="space-y-8">
+                    <div class="card" id="task-a">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Task A: Fill in the Blanks!</h3>
+                        <p class="mb-4">Complete the sentences below using the correct Present Continuous form of the verb in parentheses. When you're done, click the button to check your work!</p>
+                        <div class="space-y-3">
+                            <p>1. Asyl <input type="text" data-answer="is studying" class="border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> (study) for her history test right now.</p>
+                            <p>2. My friends and I <input type="text" data-answer="are not going" class="border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> (not / go) to the cinema tonight.</p>
+                            <p>3. The volleyball coach <input type="text" data-answer="is talking" class="border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> (talk) to the team at the moment.</p>
+                            <p>4. How fast <input type="text" data-answer="are" class="w-16 border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> you <input type="text" data-answer="running" class="border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> (run) in practice today?</p>
+                            <p>5. My family <input type="text" data-answer="is planning" class="border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> (plan) our summer trip.</p>
+                             <p>6. Look! A cat <input type="text" data-answer="is chasing" class="border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500"> (chase) a butterfly!</p>
+                        </div>
+                        <button onclick="checkTaskA()" class="mt-4 bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors">Check Answers</button>
+                    </div>
+
+                    <div class="card" id="task-b">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Task B: Choose the Correct Form!</h3>
+                        <p class="mb-4">Click on the correct option in each sentence. Your choice will light up, letting you know if it's correct or not instantly!</p>
+                        <div class="space-y-4">
+                            <div>1. She <span class="choice-btn" onclick="selectChoice(this, false)">is watch</span> / <span class="choice-btn" onclick="selectChoice(this, true)">is watching</span> a K-Drama on her laptop now.</div>
+                            <div>2. They <span class="choice-btn" onclick="selectChoice(this, false)">are listen</span> / <span class="choice-btn" onclick="selectChoice(this, true)">are listening</span> to the music of Adele.</div>
+                            <div>3. We <span class="choice-btn" onclick="selectChoice(this, false)">am traveling</span> / <span class="choice-btn" onclick="selectChoice(this, true)">are traveling</span> to Italy next month!</div>
+                            <div>4. <span class="choice-btn" onclick="selectChoice(this, true)">Is your sister sleeping</span> / <span class="choice-btn" onclick="selectChoice(this, false)">Your sister is sleeping</span> at the moment?</div>
+                            <div>5. I <span class="choice-btn" onclick="selectChoice(this, true)">am doing</span> / <span class="choice-btn" onclick="selectChoice(this, false)">doing</span> my homework right now.</div>
+                        </div>
+                    </div>
+                     <div class="card" id="task-c">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Task C: Correct the Mistakes!</h3>
+                         <p class="mb-4">Find the mistake in each sentence and rewrite it correctly. Use the "Check" button for each one to see how you did.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <p>1. They is playing volleyball.</p>
+                                <div class="flex items-center gap-2">
+                                    <span>&rarr;</span> <input type="text" data-answer="They are playing volleyball." class="flex-grow border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500">
+                                    <button onclick="checkSingle(this)" class="bg-gray-200 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 text-sm">Check</button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>2. She not reading a book.</p>
+                                <div class="flex items-center gap-2">
+                                    <span>&rarr;</span> <input type="text" data-answer="She is not reading a book." class="flex-grow border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500">
+                                     <button onclick="checkSingle(this)" class="bg-gray-200 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 text-sm">Check</button>
+                                </div>
+                            </div>
+                             <div>
+                                <p>3. Am you feeling happy today?</p>
+                                <div class="flex items-center gap-2">
+                                    <span>&rarr;</span> <input type="text" data-answer="Are you feeling happy today?" class="flex-grow border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500">
+                                     <button onclick="checkSingle(this)" class="bg-gray-200 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 text-sm">Check</button>
+                                </div>
+                            </div>
+                             <div>
+                                <p>4. I am study English now.</p>
+                                <div class="flex items-center gap-2">
+                                    <span>&rarr;</span> <input type="text" data-answer="I am studying English now." class="flex-grow border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500">
+                                     <button onclick="checkSingle(this)" class="bg-gray-200 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 text-sm">Check</button>
+                                </div>
+                            </div>
+                             <div>
+                                <p>5. What he is doing right now?</p>
+                                <div class="flex items-center gap-2">
+                                    <span>&rarr;</span> <input type="text" data-answer="What is he doing right now?" class="flex-grow border-gray-300 rounded-md shadow-sm focus:border-pink-500 focus:ring-pink-500">
+                                     <button onclick="checkSingle(this)" class="bg-gray-200 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-300 text-sm">Check</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-create" class="hidden">
+                 <div class="grid md:grid-cols-2 gap-6">
+                    <div class="card">
+                         <h3 class="text-xl font-bold text-gray-800 mb-2">Speaking Task: What are you doing? 🎤</h3>
+                         <p class="mb-4">This is a fun game to play with a partner or family member to practice your speaking and listening skills. Follow the steps below!</p>
+                         <ol class="list-decimal list-inside space-y-2">
+                             <li><strong>Mime:</strong> Secretly choose an action (like eating spaghetti or singing) and act it out without making a sound.</li>
+                             <li><strong>Guess:</strong> Your partner asks "Are you...?" questions to guess your action. (e.g., "Are you reading a book?").</li>
+                             <li><strong>Answer:</strong> Reply with "Yes, I am!" or "No, I'm not." until they guess correctly. Then switch roles!</li>
+                         </ol>
+                    </div>
+                     <div class="card bg-gradient-to-br from-pink-400 to-orange-300 text-white">
+                         <h3 class="text-xl font-bold mb-2">Creative Writing: Live from Today! 📸</h3>
+                         <p class="mb-4 opacity-90">Imagine you are posting an Instagram Story. Write 4-5 sentences in the box below to tell your friends what's happening right now. Use the Present Continuous!</p>
+                         <div class="bg-white/20 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                 <div class="w-10 h-10 bg-white rounded-full flex-shrink-0 mr-2"></div>
+                                 <div class="font-semibold">Asylaiym_S</div>
+                            </div>
+                             <textarea id="story-text" rows="5" class="w-full bg-transparent border-2 border-white/50 rounded-md p-2 placeholder-white/70 focus:ring-white focus:border-white" placeholder="What are you doing right now?"></textarea>
+                         </div>
+                         <button id="show-story" class="mt-4 bg-white text-pink-500 font-bold py-2 px-4 rounded-lg w-full hover:bg-gray-100 transition-colors">Post Story ✨</button>
+                         <div id="story-confirmation" class="hidden mt-2 text-center font-semibold">Posted! Great job!</div>
+                     </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = {
+                learn: document.getElementById('nav-learn'),
+                practice: document.getElementById('nav-practice'),
+                create: document.getElementById('nav-create')
+            };
+
+            const sections = {
+                learn: document.getElementById('section-learn'),
+                practice: document.getElementById('section-practice'),
+                create: document.getElementById('section-create')
+            };
+
+            function switchSection(target) {
+                Object.keys(sections).forEach(key => {
+                    sections[key].classList.add('hidden');
+                    navButtons[key].classList.remove('active');
+                });
+                sections[target].classList.remove('hidden');
+                navButtons[target].classList.add('active');
+            }
+
+            navButtons.learn.addEventListener('click', () => switchSection('learn'));
+            navButtons.practice.addEventListener('click', () => switchSection('practice'));
+            navButtons.create.addEventListener('click', () => switchSection('create'));
+            
+            document.getElementById('show-story').addEventListener('click', () => {
+                const storyText = document.getElementById('story-text').value;
+                if (storyText.trim() !== '') {
+                    const confirmation = document.getElementById('story-confirmation');
+                    confirmation.classList.remove('hidden');
+                    setTimeout(() => confirmation.classList.add('hidden'), 2000);
+                }
+            });
+        });
+
+        function checkTaskA() {
+            const taskContainer = document.getElementById('task-a');
+            const inputs = taskContainer.querySelectorAll('input[type="text"]');
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase().replace(/[.,!?;]/g, '');
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                input.classList.remove('correct-answer', 'incorrect-answer');
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('correct-answer');
+                } else {
+                    input.classList.add('incorrect-answer');
+                }
+            });
+        }
+
+        function selectChoice(element, isCorrect) {
+            const parent = element.parentElement;
+            const choices = parent.querySelectorAll('.choice-btn');
+            choices.forEach(choice => {
+                choice.classList.remove('selected', 'correct-answer', 'incorrect-answer');
+            });
+
+            element.classList.add('selected');
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.classList.add('incorrect-answer');
+            }
+        }
+        
+        function checkSingle(button) {
+            const input = button.previousElementSibling;
+            const userAnswer = input.value.trim().toLowerCase().replace(/[.,!?;]/g, '');
+            const correctAnswer = input.dataset.answer.toLowerCase().replace(/[.,!?;]/g, '');
+            input.classList.remove('correct-answer', 'incorrect-answer');
+            if (userAnswer === correctAnswer) {
+                input.classList.add('correct-answer');
+            } else {
+                input.classList.add('incorrect-answer');
+            }
+        }
+    </script>
+</body>
+</html>
